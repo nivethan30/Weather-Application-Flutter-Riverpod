@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather_app/providers/theme_provider.dart';
+import 'pages/splash_screen.dart';
 import 'utils/theme.dart';
-import 'pages/homepage/homepage.dart';
 
 /// The main entrypoint of the application.
 ///
@@ -19,8 +19,9 @@ class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
+
   /// Builds the main [MaterialApp] widget with the chosen [ThemeMode]
-  /// and the [HomePage] as the home route.
+  /// and the [SplashScreen] as the home route.
   Widget build(BuildContext context, WidgetRef ref) {
     final ThemeMode themeMode = ref.watch(themeProviderNotifier);
     return MaterialApp(
@@ -29,7 +30,7 @@ class MyApp extends ConsumerWidget {
       darkTheme: AppTheme.darkTheme,
       theme: AppTheme.lightTheme,
       themeMode: themeMode,
-      home: const HomePage(),
+      home: const SplashScreen(),
     );
   }
 }

@@ -15,3 +15,8 @@ String formatDateTime(DateTime dateTime) {
   String formatted = DateFormat('MMM, dd').format(dateTime);
   return formatted;
 }
+
+
+class Assets{
+  static const String weatherImage= 'assets/images/weather.png';
+}
